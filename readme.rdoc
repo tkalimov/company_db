@@ -1,0 +1,1 @@
+PGPASSWORD= pg_dump -Fc --no-acl --no-owner -h localhost -U timurkalimov python_first > mydb.dump
