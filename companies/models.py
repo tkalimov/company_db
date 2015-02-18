@@ -57,4 +57,4 @@ class Company(models.Model):
 	uniques_mom = models.IntegerField() # May have a percentage in the field that needs removing 	
 
 	def __unicode__(self):
-		return self.company_name
+		return str(self.company_name)
