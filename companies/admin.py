@@ -67,9 +67,10 @@ class EmployeeCountListFilter(admin.SimpleListFilter):
 
 class CompanyAdmin(admin.ModelAdmin):
     # fields = ['pub_date', 'question']
-	list_display = ('company_name', 'stage', 'city', 'mattermark_score', 'total_funding', 'momentum_score', 'employees', 'investors', 'cached_growth_score')
-	list_filter = ['stage', EmployeeCountListFilter]
-	search_fields = ['company_name', 'investors']
+    list_display = ('company_name', 'stage', 'city', 'mattermark_score', 'total_funding', 'momentum_score', 'employees', 'investors', 'cached_growth_score')
+    list_filter = ['stage', EmployeeCountListFilter]
+    search_fields = ['company_name', 'investors']
+    ordering = ['-cached_growth_score']
 
 admin.site.register(Company, CompanyAdmin)
 
