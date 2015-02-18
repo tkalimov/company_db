@@ -1,1 +1,6 @@
+
+==Create data dump from local database with name 'python_first'
 PGPASSWORD= pg_dump -Fc --no-acl --no-owner -h localhost -U timurkalimov python_first > mydb.dump
+
+==After uploading it to Amazon S3, import using Heroku pgbackups 
+heroku pgbackups:restore DATABASE_URL 'https://s3-us-west-2.amazonaws.com/tim-experiments/mydb.dump'
